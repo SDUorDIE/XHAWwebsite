@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+    <script>
+        const Fess = {
+            'First Aid': 1500,
+            'Sewing': 1500,
+            'Landscaping' : 1500,
+            'Life Skils' : 1500,
+            'Child Minding' : 750,
+            'Cooking': 750,
+            'Garden Maintenance' : 750,
+        };
+        function Totalfees(){
+            const Courses = document.querySelectorAll('input[name="Courses"]:checked');
+            let total = 0;
+
+            Courses.forEach(course => {
+                total += Fess[course.value];
+            });
+
+            if (Fess.length > 2){
+                total *= 0.9; // 10% discount
+            }
+
+            total *= 1.15;
+
+            document.getElementById('total-fee').innerText =Total Fee : Fess;
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        Total Fees
+    </h1>
+    <h2>Enter Details
+    </h2>
+
+    <form>
+        <div class="containerinfo">
+    <div class="container">
+        <label for="Name"></label>
+        <input type="text" id="Name" name="Name" placeholder="Enter Name" required>
+    </div>
+
+    <div class="container">
+        <label for="Number"></label>
+        <input type="tel" id="Number" name="Number" placeholder="Enter Phone Number" required maxlength="10">
+    </div>
+
+    <div class="container">
+        <label for="Email"></label>
+        <input type="email" id="Email" name="Email" placeholder="Enter Email adress" required>
+    </div>
+</div>
+    
+    <h2>select courses</h2>
+    <div class="Something">
+        <label for="First Aid"><input type="checkbox" name="Courses" value="First Aid">First Aid</label>
+        <br>
+        <label for="Sewing"><input type="checkbox" name="Courses" value="Sewing">Sewing</label>
+        <br>
+        <label for="Landscaping"><input type="checkbox" name="Courses" value="Landscaping">Landscaping</label>
+        <br>
+        <label for="Life Skills"><input type="checkbox" name="Courses" value="Life Skills">Life Skills</label>
+        <br>
+        <label for="Child Minding"><input type="checkbox" name="Courses" value="Child Minding">Child Minding</label>
+        <br>
+        <label for="Cooking"><input type="checkbox" name="Courses" value="Cooking">Cooking</label>
+        <br>
+        <label for="Garden Maintenance"><input type="checkbox" name="Courses" value="Garden Maintenance">Garden Maintenance</label>
+    </div>
+    <br>
+    <button type="button" onclick="Totalfees()">Submit</button>
+    <br>
+    <div class="form-section total-fee" id="total-fee"></div>
+</form>
+<br>
+<br>
+</div>
+<footer class="footerContainer">
+    <div class="footerNav">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="sixmonthc.html">Six Month Courses</a></li>
+            <li><a href="sixweekc.html">Six Week Courses</a></li>
+            <li><a href="total fees.html">Total Fees</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="footerBottom">
+        <p>copyright &copy;;2024</p>
+
+    </div>
+   </footer>
+
+</body>
+</html>
